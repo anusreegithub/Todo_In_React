@@ -1,24 +1,25 @@
 import { useState } from "react";
 import "../App.css";
 
-const AddTask = ({ addTask,allTasks }) => {
-  const [value, setValue] = useState("")
-
+const AddTask = ({ addTask, allTasks }) => {
+  const [value, setValue] = useState("");
 
   const addItem = () => {
-    if (allTasks.some(task => task.title.toLowerCase() === value.toLowerCase())) {
+    if (
+      allTasks.some((task) => task.title.toLowerCase() === value.toLowerCase())
+    ) {
       alert("Task already exists!");
-      return; 
+      return;
     }
-    addTask(value)
-    setValue("")
-  }
+    addTask(value);
+    setValue("");
+  };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      addItem()
+      addItem();
     }
-  }
+  };
 
   return (
     <div className="add-task-container">
@@ -36,6 +37,6 @@ const AddTask = ({ addTask,allTasks }) => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 export default AddTask;
