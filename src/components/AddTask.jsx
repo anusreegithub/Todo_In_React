@@ -1,10 +1,15 @@
 import { useState } from "react";
 import "../App.css";
 
-const AddTask = ({ addTask }) => {
+const AddTask = ({ addTask,allTasks }) => {
   const [value, setValue] = useState("")
 
+
   const addItem = () => {
+    if (allTasks.some(task => task.title.toLowerCase() === value.toLowerCase())) {
+      alert("Task already exists!");
+      return; 
+    }
     addTask(value)
     setValue("")
   }
