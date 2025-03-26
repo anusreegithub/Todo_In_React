@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ListTasks from "./ListTasks";
 import AddTask from "./AddTask";
 import "../App.css";
-import Search from "./Search";
+
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);

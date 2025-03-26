@@ -4,6 +4,8 @@ import "../App.css";
 const AddTask = ({ addTask, allTasks }) => {
   const [value, setValue] = useState("");
 
+  
+
   const addItem = () => {
     if (
       allTasks.some((task) => task.title.toLowerCase() === value.toLowerCase())
@@ -15,12 +17,6 @@ const AddTask = ({ addTask, allTasks }) => {
     setValue("");
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      addItem();
-    }
-  };
-
   return (
     <div className="add-task-container">
       <h1>Todo List</h1>
@@ -29,7 +25,6 @@ const AddTask = ({ addTask, allTasks }) => {
           type="text"
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          onKeyDown={handleKeyDown}
           placeholder="Add a new task..."
         />
         <button className="add-btn" onClick={addItem}>

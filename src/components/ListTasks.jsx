@@ -8,11 +8,7 @@ const ListTasks = ({ allTasks, index, removeTask, editTask, updateTask, complete
     updateTask(index, editValue);
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleUpdate();
-    }
-  };
+
 
   return (
     <div className="task-item">
@@ -22,8 +18,6 @@ const ListTasks = ({ allTasks, index, removeTask, editTask, updateTask, complete
             type="text"
             value={editValue}
             onChange={(e) => setEditValue(e.target.value)}
-            onKeyDown={handleKeyDown}
-            autoFocus
           />
           <button className="save-btn" onClick={handleUpdate}>
             Save
